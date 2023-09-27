@@ -42,8 +42,7 @@ and returns a JSON object with the following fields:
   "blocks": [
     {
         "type": "minecraft:redstone_block",
-        "position": [0, 0, 0],
-        "facing": null
+        "position": [0, 0, 0]
     },
     {
         "type": "minecraft:piston",
@@ -55,7 +54,7 @@ and returns a JSON object with the following fields:
 }
 ```
 
-The `blocks` field is an array of objects, each of which represents a block in the contraption. The `type` field is the type of the block, and the `position` field is the position of the block in the world. The block can also contain these fields, however they may be null if that block doesn't support it:
+The `blocks` field is an array of objects, each of which represents a block in the contraption. The `type` field is the type of the block, and the `position` field is the position of the block in the world. The block can also contain these fields, however they may be undefined if that block doesn't support it:
 - **"facing"**: The rotation of the block, either `up`, `down`, `north`, `south`, `east`, or `west`.
 - **"state"**: Either `on` or `off`. Used for levers or redstone repeaters.
 - **"locked"**: A boolean value (`true` or `false`) representing the [lock state of a repeater](https://minecraft.wiki/w/Redstone_Repeater#Signal_locking).
