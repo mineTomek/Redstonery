@@ -52,8 +52,7 @@ Version is not e.g. 1.20, for grouping versions without change between them. Mor
 
 </details>
 
-> [!IMPORTANT]
-> Remember to use the `Authentication` header with your API key
+**Remember to use the `Authentication` header with your API key**
 
 and returns a JSON object with the following fields:
 
