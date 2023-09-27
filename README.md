@@ -23,6 +23,9 @@ The app's code is in the `/src/app` directory.
 
 ## API
 
+> [!IMPORTANT]
+> This is only for demonstration purposes, the API isn't available, because I haven't trained the AI yet.
+
 The API is available at /api/prompt. It takes a JSON object with the following fields:
 
 ```json
