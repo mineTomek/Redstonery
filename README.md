@@ -4,6 +4,23 @@
 
 This is a web app that uses AI models to generate Redstone contraptions from natural language descriptions. It also has a 3D interactive display of the contraption, so the user can test if the thing works.
 
+## Usage
+
+It's not hosted right now. However, you can read the development section below, to see how to run it on your machine.
+
+<!-- To use the web app, simply run `bun run dev` or `npm run dev` and visit `http://localhost:3000` in your web browser. You can then enter a natural language description of the contraption you want to create in the text box and click the "Generate" button. The app will then generate the contraption and display it in the 3D interactive display. You can then test if the contraption works by moving the blocks around and interacting with them. -->
+
+## Development
+
+To run the web app locally, you will need to install Node.js and [npm](https://npmjs.com) or [Bun](https://bun.sh). Once you have installed Node.js and npm or bun, you can install the dependencies for the web app by running `npm i` or `bun i`.
+
+To start the development server, run `npm run dev` or `bun run dev`.
+
+The development server will run on port 3000. You can then visit `http://localhost:3000` in your web browser to view the web app.
+
+The app's code is in the `/src/app` directory.
+
+
 ## API
 
 The API is available at /api/prompt. It takes a JSON object with the following fields:
@@ -63,21 +80,6 @@ The `blocks` field is an array of objects, each of which represents a block in t
 - **"open"**: Boolean value applicable to doors and fence gates.
 - **"page"**: number from 1 to 15 used for the page selected on a lectern. It's limited because this is mainly used for the redstone signal, so no more is necessary.
 
-## Usage
-
-It's not hosted right now. However, you can read the development section below, to see how to run it on your machine.
-
-<!-- To use the web app, simply run `bun run dev` or `npm run dev` and visit `http://localhost:3000` in your web browser. You can then enter a natural language description of the contraption you want to create in the text box and click the "Generate" button. The app will then generate the contraption and display it in the 3D interactive display. You can then test if the contraption works by moving the blocks around and interacting with them. -->
-
-## Development
-
-To run the web app locally, you will need to install Node.js and [npm](https://npmjs.com) or [Bun](https://bun.sh). Once you have installed Node.js and npm or bun, you can install the dependencies for the web app by running `npm i` or `bun i`.
-
-To start the development server, run `npm run dev` or `bun run dev`.
-
-The development server will run on port 3000. You can then visit `http://localhost:3000` in your web browser to view the web app.
-
-The app's code is in the `/src/app` directory.
 
 ## License
 
