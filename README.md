@@ -81,6 +81,7 @@ The `blocks` field is an array of objects, each of which represents a block in t
 - **"subtract"**: A boolean value for [repeater's subtract mode](https://minecraft.wiki/w/Redstone_Comparator#Subtract_signal_strength).
 - **"open"**: Boolean value applicable to doors and fence gates.
 - **"page"**: number from 1 to 15 used for the page selected on a lectern. It's limited because this is mainly used for the redstone signal, so no more is necessary.
+- **"inverted"**: Boolean value applicable to daylight detectors. Read more [here](https://minecraft.wiki/w/Daylight_Detector#Inverted_Daylight_Detector).
 
 
 ## License
