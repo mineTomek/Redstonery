@@ -33,7 +33,7 @@ Version is not e.g. 1.20, for grouping versions without change between them. Mor
 </details>
 
 > [!IMPORTANT]
-> Remember to use `Authentication` header with your API key
+> Remember to use the `Authentication` header with your API key
 
 and returns a JSON object with the following fields:
 
@@ -54,20 +54,20 @@ and returns a JSON object with the following fields:
 }
 ```
 
-The `blocks` field is an array of objects, each of which represents a block in the contraption. The `type` field is the type of the block, and the `position` field is the position of the block in the world. The block can also contain these fields, however they may be undefined if that block doesn't support it:
+The `blocks` field is an array of objects, each of which represents a block in the contraption. The `type` field is the type of the block, and the `position` field is the position of the block in the world. The block can also contain these fields, however, they may be undefined if that block doesn't support it:
 - **"facing"**: The rotation of the block, either `up`, `down`, `north`, `south`, `east`, or `west`.
 - **"state"**: Either `on` or `off`. Used for levers or redstone repeaters.
 - **"locked"**: A boolean value (`true` or `false`) representing the [lock state of a repeater](https://minecraft.wiki/w/Redstone_Repeater#Signal_locking).
-- **"delay"**: An integer value from 1 to 4 representing repeater's delay.
+- **"delay"**: An integer value from 1 to 4 representing the repeater's delay.
 - **"subtract"**: A boolean value for [repeater's subtract mode](https://minecraft.wiki/w/Redstone_Comparator#Subtract_signal_strength).
-- **"open"**: Boolean value applicable to doors and and fence gates.
-- **"page"**: number from 1 to 15 used for the page selected on a lectern. It's limited, because this is mainly used for redstone signal, so no more is necessary.
+- **"open"**: Boolean value applicable to doors and fence gates.
+- **"page"**: number from 1 to 15 used for the page selected on a lectern. It's limited because this is mainly used for the redstone signal, so no more is necessary.
 
 ## Usage
 
-It's not hosted right now. However you can read the development section bellow, to see how to run it on your machine.
+It's not hosted right now. However, you can read the development section below, to see how to run it on your machine.
 
-<!-- To use the web app, simply run `bun run dev` or `npm run dev` visit `http://localhost:3000` in your web browser. You can then enter a natural language description of the contraption you want to create in the text box and click the "Generate" button. The app will then generate the contraption and display it in the 3D interactive display. You can then test if the contraption works by moving the blocks around and interacting with it. -->
+<!-- To use the web app, simply run `bun run dev` or `npm run dev` and visit `http://localhost:3000` in your web browser. You can then enter a natural language description of the contraption you want to create in the text box and click the "Generate" button. The app will then generate the contraption and display it in the 3D interactive display. You can then test if the contraption works by moving the blocks around and interacting with them. -->
 
 ## Development
 
@@ -77,7 +77,7 @@ To start the development server, run `npm run dev` or `bun run dev`.
 
 The development server will run on port 3000. You can then visit `http://localhost:3000` in your web browser to view the web app.
 
-The app's code is in `/src/app` directory.
+The app's code is in the `/src/app` directory.
 
 ## License
 
