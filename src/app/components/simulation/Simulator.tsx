@@ -4,6 +4,7 @@ import { OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { useState } from 'react'
 import Grid from './Grid'
+import SimBlock from './SimBlock'
 
 export default function Simulator() {
   const [autoRotate, setAutoRotate] = useState(true)
@@ -21,9 +22,7 @@ export default function Simulator() {
         onStart={() => setAutoRotate(false)}
       />
       <Grid
-        width={6}
-        height={1}
-        depth={1}
+        blocks={[new SimBlock(0, 0, 0, 0x6dc53b)]}
       />
     </Canvas>
   )
