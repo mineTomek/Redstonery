@@ -23,14 +23,12 @@ export default function Grid(props: {
         blocks.push(
           <GridBlock
             key={`${x}-${y}-${z}`}
-            color={
-              colors[x]
-            }
             position={[
               x - props.width / 3,
               y - props.height / 3,
               z - props.depth / 3,
             ]}
+            color={colors[x]}
           />
         )
       }
