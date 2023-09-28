@@ -31,7 +31,10 @@ export default function Box(props: {
       onPointerUp={event => setClicked(false)}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? 'white' : props.color} />
+      <meshStandardMaterial
+        map={texture}
+        color={hovered ? 'white' : props.color}
+      />
     </mesh>
   )
 }
