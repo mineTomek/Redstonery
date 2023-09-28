@@ -5,7 +5,7 @@ import { NearestFilter } from 'three'
 import sample_texture from './assets/sample_texture.png'
 
 export default function Box(props: {
-  position: Vector3
+  position: Vector3 | [x: number, y: number, z: number]
   color: number
 }) {
   const ref = useRef<THREE.Mesh>(null!)

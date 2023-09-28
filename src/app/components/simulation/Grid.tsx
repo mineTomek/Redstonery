@@ -1,4 +1,3 @@
-import { Vector3 } from 'three'
 import { Colors } from './Box'
 import GridBlock from './GridBlock'
 
@@ -24,16 +23,14 @@ export default function Grid(props: {
         blocks.push(
           <GridBlock
             key={`${x}-${y}-${z}`}
-            position={
-              new Vector3(
-                x - props.width / 3,
-                y - props.height / 3,
-                z - props.depth / 3
-              )
-            }
             color={
               colors[x]
             }
+            position={[
+              x - props.width / 3,
+              y - props.height / 3,
+              z - props.depth / 3,
+            ]}
           />
         )
       }
