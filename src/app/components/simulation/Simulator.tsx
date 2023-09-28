@@ -21,9 +21,9 @@ export default function Simulator() {
         onStart={() => setAutoRotate(false)}
       />
       <Grid
-        width={3}
-        height={3}
-        depth={3}
+        width={6}
+        height={1}
+        depth={1}
       />
     </Canvas>
   )
