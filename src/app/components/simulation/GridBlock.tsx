@@ -1,9 +1,11 @@
-import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
-import { Mesh,Vector3 } from 'three';
-import Box from './Box';
+import { useRef } from 'react'
+import { Mesh, Vector3 } from 'three'
+import Box from './Box'
 
-export default function GridBlock(props: { position: Vector3; color: string | number }) {
+export default function GridBlock(props: {
+  position: Vector3
+  color: string | number
+}) {
   const ref = useRef<Mesh>(null!)
 
   return (
