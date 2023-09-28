@@ -1,4 +1,5 @@
 import { Vector3 } from 'three'
+import { Colors } from './Box'
 import GridBlock from './GridBlock'
 
 export default function Grid(props: {
@@ -7,6 +8,15 @@ export default function Grid(props: {
   depth: number
 }) {
   const blocks = []
+
+  const colors = [
+    Colors.Birch,
+    Colors.Oak,
+    Colors.Spruce,
+    Colors.DarkOak,
+    Colors.Jungle,
+    Colors.Acacia,
+  ]
 
   for (let x = 0; x < props.width; x++) {
     for (let y = 0; y < props.height; y++) {
@@ -21,7 +31,9 @@ export default function Grid(props: {
                 z - props.depth / 3
               )
             }
-            color={Math.random() * 0xffffff}
+            color={
+              colors[x]
+            }
           />
         )
       }
