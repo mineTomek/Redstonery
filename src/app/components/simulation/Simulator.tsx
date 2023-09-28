@@ -18,7 +18,7 @@ export default function Simulator() {
   ])
 
   return (
-    <Canvas>
+    <Canvas onPointerLeave={() => setAutoRotate(true)}>
       <ambientLight />
       <pointLight
         position={[10, 10, 10]}
