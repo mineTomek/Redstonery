@@ -1,5 +1,5 @@
 import { Colors } from './Box'
-import GridBlock from './GridBlock'
+import Box from './Box'
 
 export default function Grid(props: {
   width: number
@@ -21,7 +21,7 @@ export default function Grid(props: {
     for (let y = 0; y < props.height; y++) {
       for (let z = 0; z < props.depth; z++) {
         blocks.push(
-          <GridBlock
+          <Box
             key={`${x}-${y}-${z}`}
             position={[
               x - props.width / 3,
