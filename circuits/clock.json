@@ -1,0 +1,20 @@
+{
+    "blocks": [
+        {
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "color": "0x6dc53b"
+        },
+        {
+            "position": [
+                0,
+                1,
+                0
+            ],
+            "color": "0x6d3bc5"
+        }
+    ]
+}
