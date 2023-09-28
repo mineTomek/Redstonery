@@ -1,6 +1,6 @@
 import { useTexture } from '@react-three/drei'
 import { Vector3 } from '@react-three/fiber'
-import { useRef,useState } from 'react'
+import { useRef, useState } from 'react'
 import { NearestFilter } from 'three'
 import sample_texture from './assets/sample_texture.png'
 
