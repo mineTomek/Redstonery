@@ -33,3 +33,12 @@ export default function Box(props: {
     </mesh>
   )
 }
+
+export enum Colors {
+  Birch = 0xa69d6f,
+  Oak = 0x91754d,
+  Spruce = 0x63492b,
+  DarkOak = 0x362310,
+  Jungle = 0x8e684f,
+  Acacia = 0xb75312,
+}
