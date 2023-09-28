@@ -6,7 +6,7 @@ import sample_texture from './assets/sample_texture.png'
 
 export default function Box(props: {
   position: Vector3
-  color: string | number
+  color: number
 }) {
   const ref = useRef<THREE.Mesh>(null!)
 
@@ -33,7 +33,7 @@ export default function Box(props: {
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial
         map={texture}
-        color={hovered ? (props.color as number) + 0x222222 : props.color}
+        color={hovered ? props.color + 0x222222 : props.color}
       />
     </mesh>
   )

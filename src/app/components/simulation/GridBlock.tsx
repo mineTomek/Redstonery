@@ -4,7 +4,7 @@ import Box from './Box'
 
 export default function GridBlock(props: {
   position: Vector3
-  color: string | number
+  color: number
 }) {
   const ref = useRef<Mesh>(null!)
 
