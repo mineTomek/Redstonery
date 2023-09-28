@@ -20,7 +20,7 @@ export default function Box(props: {
     <mesh
       position={props.position}
       ref={ref}
-      scale={clicked ? 1.2 : 1}
+      scale={clicked ? 1 + (1 / 16) * 2 : 1}
       // onClick={event => click(!clicked)}
       onPointerOver={event => setHovered(true)}
       onPointerOut={event => {
