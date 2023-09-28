@@ -10,7 +10,7 @@ export default function Simulator() {
 
   return (
     <Canvas>
-      <ambientLight />.
+      <ambientLight />
       <pointLight
         position={[10, 10, 10]}
         intensity={2 * 500}
