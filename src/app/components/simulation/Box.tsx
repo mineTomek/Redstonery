@@ -1,13 +1,18 @@
 import { Vector3 } from '@react-three/fiber'
-import { useRef, useState } from 'react'
+import { useRef,useState } from 'react'
 
-export default function Box(props: { position: Vector3; color: string | number }) {
+export default function Box(props: {
+  position: Vector3
+  color: string | number
+}) {
   const ref = useRef<THREE.Mesh>(null!)
 
   const [hovered, setHovered] = useState(false)
   const [clicked, setClicked] = useState(false)
 
-  // useFrame((state, delta) => (ref.current.rotation.y += delta))
+  //   useFrame((state, delta) => {
+  //     ref.current.rotation.x += delta
+  //   })
 
   return (
     <mesh
