@@ -3,19 +3,37 @@
 import { OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { useState } from 'react'
+import useSWR from 'swr'
 import Grid from './Grid'
 import SimBlock from './SimBlock'
+
+const fetcher = (url: string) => fetch(url).then(res => res.json())
 
 export default function Simulator() {
   const [autoRotate, setAutoRotate] = useState(true)
 
-  const [blocks, setBlocks] = useState<SimBlock[]>([
-    new SimBlock(0, 0, 0, 0x6dc53b),
-    new SimBlock(1, 0, 0, 0xc56d3b),
-    new SimBlock(0, 0, 1, 0xc53b6d),
-    new SimBlock(1, 0, 1, 0x6d3bc5),
-    new SimBlock(0, 1, 0, 0x6d3bc5),
-  ])
+  const { data, error } = useSWR('/api/prebuilt?circuit=clock', fetcher)
+
+  if (error) return <div>Failed to load circuit</div>
+  //Handle the loading state
+  if (!data) return <div>Loading circuit...</div>
+
+  console.log(data)
+
+  let blocks: SimBlock[] = []
+
+  let jsonObject = data.blocks as { position: number[]; color: string }[]
+
+  jsonObject.forEach(jsonBlock => {
+    blocks.push(
+      new SimBlock(
+        jsonBlock.position[0],
+        jsonBlock.position[1],
+        jsonBlock.position[2],
+        parseInt(jsonBlock.color)
+      )
+    )
+  })
 
   return (
     <Canvas onPointerLeave={() => setAutoRotate(true)}>
