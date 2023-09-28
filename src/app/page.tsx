@@ -5,7 +5,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from './components/Button'
 import Navbar from './components/Navbar'
-import Simulator from './components/simulation/Simulator'
+import Simulator from './simulation/Simulator'
 
 export default function Home() {
   return (
