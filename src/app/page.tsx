@@ -5,6 +5,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from './components/Button'
 import Navbar from './components/Navbar'
+import Simulator from './components/simulation/Simulator'
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <Navbar />
 
       <div className='inline-flex flex-col items-center pt-28 pb-6 w-full h-screen justify-between'>
-        <div className='bg-slate-400 w-[80%] max-h-[90%] aspect-video text-center rounded-xl'>PLACEHOLDER</div>
+        <Simulator />
         <div className='self-stretch text-center text-[28px] font-black text-slate-800'>
           Create Amazing Redstone Contraptions with Ease
         </div>
