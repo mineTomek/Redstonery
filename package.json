@@ -23,6 +23,7 @@
     "prettier-plugin-organize-imports": "^3.2.3",
     "react": "latest",
     "react-dom": "latest",
+    "swr": "^2.2.4",
     "three": "^0.156.1"
   },
   "devDependencies": {
