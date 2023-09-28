@@ -10,9 +10,6 @@ export default function Box(props: {
   const [hovered, setHovered] = useState(false)
   const [clicked, setClicked] = useState(false)
 
-  //   useFrame((state, delta) => {
-  //     ref.current.rotation.x += delta
-  //   })
 
   return (
     <mesh
