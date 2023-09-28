@@ -22,12 +22,18 @@ export default function Box(props: {
       ref={ref}
       scale={clicked ? 1 + (1 / 16) * 2 : 1}
       // onClick={event => click(!clicked)}
-      onPointerOver={event => setHovered(true)}
+      onPointerOver={event => {
+        event.stopPropagation()
+        setHovered(true)
+      }}
       onPointerOut={event => {
         setHovered(false)
         setClicked(false)
       }}
-      onPointerDown={event => setClicked(true)}
+      onPointerDown={event => {
+        event.stopPropagation()
+        setClicked(true)
+      }}
       onPointerUp={event => setClicked(false)}
     >
       <boxGeometry args={[1, 1, 1]} />
