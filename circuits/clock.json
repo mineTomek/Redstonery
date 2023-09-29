@@ -2,21 +2,36 @@
     "blocks": [
         {
             "type": "block",
-            "position": [
-                0,
-                0,
-                0
-            ],
-            "color": "0x6dc53b"
+            "data": {
+                "position": [
+                    0,
+                    0,
+                    0
+                ],
+                "colorGroup": "0"
+            }
         },
         {
             "type": "block",
-            "position": [
-                0,
-                1,
-                0
-            ],
-            "color": "0x6d3bc5"
+            "data": {
+                "position": [
+                    0,
+                    1,
+                    0
+                ],
+                "colorGroup": "1"
+            }
+        },
+        {
+            "type": "block",
+            "data": {
+                "position": [
+                    0,
+                    2,
+                    0
+                ],
+                "colorGroup": "2"
+            }
         }
     ]
 }
