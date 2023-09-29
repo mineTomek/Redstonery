@@ -2,18 +2,18 @@ import { useTexture } from '@react-three/drei'
 import { Vector3 } from '@react-three/fiber'
 import { useRef, useState } from 'react'
 import { NearestFilter } from 'three'
-import sample_texture from './assets/sample_texture.png'
 
 export default function Box(props: {
   position: Vector3 | [x: number, y: number, z: number]
   color: number
+  texture: string
 }) {
   const ref = useRef<THREE.Mesh>(null!)
 
   const [hovered, setHovered] = useState(false)
   const [clicked, setClicked] = useState(false)
 
-  const texture = useTexture(sample_texture.src)
+  const texture = useTexture(props.texture)
   texture.magFilter = NearestFilter
 
   return (
