@@ -17,10 +17,8 @@ export default function Simulator() {
   const { data, error } = useSWR('/api/prebuilt?circuit=clock', fetcher)
 
   if (error) return <div>Failed to load circuit</div>
-  //Handle the loading state
+  
   if (!data) return <div>Loading circuit...</div>
-
-  console.log(data)
 
   let blocks: SimulationBlock[] = []
 
