@@ -1,6 +1,7 @@
 {
     "blocks": [
         {
+            "type": "block",
             "position": [
                 0,
                 0,
@@ -9,6 +10,7 @@
             "color": "0x6dc53b"
         },
         {
+            "type": "block",
             "position": [
                 0,
                 1,
