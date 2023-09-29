@@ -1,15 +1,16 @@
 import Box from './Box'
-import SimBlock from './SimBlock'
+import SimulationBlock from './SimulationBlock'
 
-export default function Grid(props: { blocks: SimBlock[] }) {
+export default function Grid(props: { blocks: SimulationBlock[] }) {
   const blocks: JSX.Element[] = []
 
   props.blocks.forEach(block => {
     blocks.push(
       <Box
-        key={`${block.x}-${block.y}-${block.z}`}
-        position={[block.x, block.y, block.z]}
-        color={block.color}
+        key={`${block.position.toString()}`}
+        position={block.position as THREE.Vector3}
+        color={parseInt(block.color)}
+        texture={block.getTexturePath()}
       />
     )
   })
