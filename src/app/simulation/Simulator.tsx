@@ -5,7 +5,8 @@ import { Canvas } from '@react-three/fiber'
 import { useState } from 'react'
 import useSWR from 'swr'
 import Grid from './Grid'
-import SimBlock from './SimBlock'
+import SimulationBlock from './SimulationBlock'
+import Block from './blocks/Block'
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
@@ -20,19 +21,20 @@ export default function Simulator() {
 
   console.log(data)
 
-  let blocks: SimBlock[] = []
+  let blocks: SimulationBlock[] = []
 
-  let jsonObject = data.blocks as { position: number[]; color: string }[]
+  let jsonObject = data.blocks as SimulationBlock[]
 
   jsonObject.forEach(jsonBlock => {
-    blocks.push(
-      new SimBlock(
-        jsonBlock.position[0],
-        jsonBlock.position[1],
-        jsonBlock.position[2],
-        parseInt(jsonBlock.color)
-      )
-    )
+    switch (jsonBlock.type) {
+      case 'block':
+        blocks.push(
+          new Block(
+            jsonBlock.position,
+            jsonBlock.color
+          )
+        )
+    }
   })
 
   return (
