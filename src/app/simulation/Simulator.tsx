@@ -23,17 +23,12 @@ export default function Simulator() {
 
   let blocks: SimulationBlock[] = []
 
-  let jsonObject = data.blocks as SimulationBlock[]
+  let jsonObject = data.blocks as { type: string; data: SimulationBlock }[]
 
   jsonObject.forEach(jsonBlock => {
     switch (jsonBlock.type) {
-      case 'block':
-        blocks.push(
-          new Block(
-            jsonBlock.position,
-            jsonBlock.color
-          )
-        )
+      default:
+        blocks.push(new Block(jsonBlock.data.position, jsonBlock.data.colorGroup))
     }
   })
 
