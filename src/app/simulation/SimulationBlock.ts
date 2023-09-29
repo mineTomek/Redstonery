@@ -1,6 +1,8 @@
 import { Vector3 } from '@react-three/fiber'
 
 export default interface SimulationBlock {
+  use(): void
+
   position: Vector3
 
   /**
@@ -9,14 +11,14 @@ export default interface SimulationBlock {
   type: string
 
   /**
-   * This is for color values like *0x6dc53b*
+   * This is a group of colors. Objects with the same color will be assigned the same color.
    */
-  color: string
+  colorGroup?: number
 
   /**
-   * This is a path to the texture, that the block should use
+   * A full path to the texture
    */
-  texture: string
+  texturePath: string
 
   facing?: Facing
 
@@ -25,20 +27,6 @@ export default interface SimulationBlock {
   locked?: boolean
 
   subtract?: boolean
-
-  use(): void
-
-  getTexturePath(): string
-
-  getColor(): string
-
-  getFacing(): Facing
-
-  getState(): boolean
-
-  getLocked(): boolean
-
-  getSubtract(): boolean
 }
 
 export enum Facing {
