@@ -4,7 +4,8 @@ import { OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { useState } from 'react'
 import useSWR from 'swr'
-import Grid from './Grid'
+import BlockColors from './BlockColors'
+import Box from './Box'
 import SimulationBlock from './SimulationBlock'
 import Block from './blocks/Block'
 
@@ -44,7 +45,22 @@ export default function Simulator() {
         autoRotateSpeed={2}
         onStart={() => setAutoRotate(false)}
       />
-      <Grid blocks={blocks} />
+      {blocks.map(block => (
+        <Box
+          key={`${block.position.toString()}`}
+          position={block.position as THREE.Vector3}
+          color={
+            block.colorGroup
+              ? parseInt(
+                  BlockColors.prototype.generateColors(3, 54, 50)[
+                    block.colorGroup!
+                  ]
+                )
+              : 0xffffff
+          }
+          texture={block.texturePath}
+        />
+      ))}
     </Canvas>
   )
 }
