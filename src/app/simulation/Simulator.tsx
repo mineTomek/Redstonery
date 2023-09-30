@@ -52,8 +52,8 @@ export default function Simulator() {
 
   let centerPos: Vector3Fiber = [
     (minPosArr[0] + maxPosArr[0]) / 2,
-    (minPosArr[0] + maxPosArr[0]) / 2,
-    (minPosArr[0] + maxPosArr[0]) / 2,
+    (minPosArr[1] + maxPosArr[1]) / 2,
+    (minPosArr[2] + maxPosArr[2]) / 2,
   ]
 
   return (
