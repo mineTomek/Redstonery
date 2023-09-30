@@ -6,7 +6,7 @@ import { useState } from 'react'
 import useSWR from 'swr'
 import { Vector3 } from 'three'
 import BlockColors from './BlockColors'
-import Box from './Box'
+import RenderedBlock from './RenderedBlock'
 import SimulationBlock from './SimulationBlock'
 import Block from './blocks/Block'
 
@@ -76,7 +76,7 @@ export default function Simulator(props: {circuit: string}) {
       {blocks.map((block, i) => {
         let blockPos = block.position
         return (
-          <Box
+          <RenderedBlock
             key={`block_${i}`}
             position={blockPos}
             color={

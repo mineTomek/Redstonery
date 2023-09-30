@@ -3,7 +3,7 @@ import { Vector3 } from '@react-three/fiber'
 import { useRef, useState } from 'react'
 import { NearestFilter } from 'three'
 
-export default function Box(props: {
+export default function RenderedBlock(props: {
   position: Vector3 | [x: number, y: number, z: number]
   color: number
   texture: string
@@ -39,7 +39,13 @@ export default function Box(props: {
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial
         map={texture}
-        color={hovered || clicked ? (props.color < 0xdddddd ? props.color + 0x222222 : 0xffffff) : props.color}
+        color={
+          hovered || clicked
+            ? props.color < 0xdddddd
+              ? props.color + 0x222222
+              : 0xffffff
+            : props.color
+        }
       />
     </mesh>
   )
