@@ -39,7 +39,7 @@ export default function Box(props: {
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial
         map={texture}
-        color={hovered ? (props.color < 0xdddddd ? props.color + 0x222222 : 0xffffff) : props.color}
+        color={hovered || clicked ? (props.color < 0xdddddd ? props.color + 0x222222 : 0xffffff) : props.color}
       />
     </mesh>
   )
