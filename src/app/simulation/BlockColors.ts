@@ -1,55 +1,41 @@
 export default class BlockColors {
-  private componentToHex(c: number): string {
-    const hex = c.toString(16)
-    return hex.length === 1 ? '0' + hex : hex
+  generateColors(colorGroup: number): string {
+    return [
+      MinecraftColors.White,
+      MinecraftColors.LightGray,
+      MinecraftColors.DarkGray,
+      MinecraftColors.Black,
+      MinecraftColors.Red,
+      MinecraftColors.Orange,
+      MinecraftColors.Yellow,
+      MinecraftColors.LimeGreen,
+      MinecraftColors.Green,
+      MinecraftColors.LightBlue,
+      MinecraftColors.Cyan,
+      MinecraftColors.Blue,
+      MinecraftColors.Purple,
+      MinecraftColors.Magenta,
+      MinecraftColors.Pink,
+      MinecraftColors.Brown
+    ][colorGroup]
   }
+}
 
-  private hslToHex(h: number, s: number, l: number): string {
-    const rgb = this.hslToRgb(h, s, l)
-    return `0x${this.componentToHex(rgb[0])}${this.componentToHex(
-      rgb[1]
-    )}${this.componentToHex(rgb[2])}`
-  }
-
-  private hslToRgb(h: number, s: number, l: number): number[] {
-    h /= 360
-    s /= 100
-    l /= 100
-
-    let r, g, b
-
-    if (s === 0) {
-      r = g = b = l // Achromatic
-    } else {
-      const hueToRgb = (p: number, q: number, t: number) => {
-        if (t < 0) t += 1
-        if (t > 1) t -= 1
-        if (t < 1 / 6) return p + (q - p) * 6 * t
-        if (t < 1 / 2) return q
-        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6
-        return p
-      }
-
-      const q = l < 0.5 ? l * (1 + s) : l + s - l * s
-      const p = 2 * l - q
-
-      r = hueToRgb(p, q, h + 1 / 3)
-      g = hueToRgb(p, q, h)
-      b = hueToRgb(p, q, h - 1 / 3)
-    }
-
-    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)]
-  }
-
-  generateColors(numberOfColors: number, saturation: number, lightness: number): string[] {
-    const colors: string[] = []
-
-    for (let i = 0; i < numberOfColors; i++) {
-      const hue = (i / numberOfColors) * 360 // Distribute hues evenly
-      const hexColor = this.hslToHex(hue, saturation, lightness) // Convert HSL to hex
-      colors.push(hexColor)
-    }
-
-    return colors
-  }
+export enum MinecraftColors {
+  White = '0xffffff',
+  LightGray = '0xa0a7a7',
+  DarkGray = '0x414141',
+  Black = '0x181414',
+  Red = '0x9e2b27',
+  Orange = '0xea7e35',
+  Yellow = '0xc2b51c',
+  LimeGreen = '0x39ba2e',
+  Green = '0x364b18',
+  LightBlue = '0x6387d2',
+  Cyan = '0x267191',
+  Blue = '0x253193',
+  Purple = '0x7e34bf',
+  Magenta = '0xbe49c9',
+  Pink = '0xd98199',
+  Brown = '0x56331c',
 }
