@@ -15,6 +15,8 @@ const fetcher = (url: string) => fetch(url).then(res => res.json())
 export default function Simulator(props: { circuit: string }) {
   const [autoRotate, setAutoRotate] = useState(true)
 
+  const [clickedBlock, setClickedBlock] = useState(-1)
+
   const [minPos, setMinPos] = useState<Vector3Fiber>([100, 100, 100])
 
   const [maxPos, setMaxPos] = useState<Vector3Fiber>([-100, -100, -100])
@@ -93,6 +95,10 @@ export default function Simulator(props: { circuit: string }) {
                 : 0xffffff
             }
             texture={block.texturePath}
+            clicked={clickedBlock === i}
+            setClicked={clicked =>
+              clicked ? setClickedBlock(i) : setClickedBlock(-1)
+            }
           />
         )
       })}
