@@ -22,7 +22,7 @@ export default class BlockColors {
 }
 
 export enum MinecraftColors {
-  White = '0xffffff',
+  White = '0xeeeeee',
   LightGray = '0xa0a7a7',
   DarkGray = '0x414141',
   Black = '0x181414',
