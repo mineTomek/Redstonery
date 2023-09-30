@@ -13,7 +13,7 @@ export default function Home() {
       <Navbar />
 
       <div className='inline-flex flex-col items-center pt-28 pb-6 w-full h-screen justify-between'>
-        <Simulator />
+        <Simulator circuit='clock'/>
         <div className='self-stretch text-center text-[28px] font-black text-slate-800'>
           Create Amazing Redstone Contraptions with Ease
         </div>

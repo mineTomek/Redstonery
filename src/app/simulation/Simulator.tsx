@@ -12,14 +12,14 @@ import Block from './blocks/Block'
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
-export default function Simulator() {
+export default function Simulator(props: {circuit: string}) {
   const [autoRotate, setAutoRotate] = useState(true)
 
   const [minPos, setMinPos] = useState<Vector3Fiber>([100, 100, 100])
 
   const [maxPos, setMaxPos] = useState<Vector3Fiber>([-100, -100, -100])
 
-  const { data, error } = useSWR('/api/prebuilt?circuit=clock', fetcher)
+  const { data, error } = useSWR('/api/prebuilt?circuit=' + props.circuit, fetcher)
 
   if (error) return <div>Failed to load circuit</div>
 
