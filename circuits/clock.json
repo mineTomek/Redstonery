@@ -32,6 +32,17 @@
                 ],
                 "colorGroup": "2"
             }
+        },
+        {
+            "type": "block",
+            "data": {
+                "position": [
+                    0,
+                    3,
+                    0
+                ],
+                "colorGroup": "3"
+            }
         }
     ]
 }
