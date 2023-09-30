@@ -12,14 +12,17 @@ import Block from './blocks/Block'
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
-export default function Simulator(props: {circuit: string}) {
+export default function Simulator(props: { circuit: string }) {
   const [autoRotate, setAutoRotate] = useState(true)
 
   const [minPos, setMinPos] = useState<Vector3Fiber>([100, 100, 100])
 
   const [maxPos, setMaxPos] = useState<Vector3Fiber>([-100, -100, -100])
 
-  const { data, error } = useSWR('/api/prebuilt?circuit=' + props.circuit, fetcher)
+  const { data, error } = useSWR(
+    '/api/prebuilt?circuit=' + props.circuit,
+    fetcher
+  )
 
   if (error) return <div>Failed to load circuit</div>
 
@@ -59,7 +62,10 @@ export default function Simulator(props: {circuit: string}) {
   return (
     <Canvas
       onPointerLeave={() => setAutoRotate(true)}
-      camera={{ position: [centerPos[0] + 3, centerPos[1], centerPos[2] + 3], near: 0.01 }}
+      camera={{
+        position: [centerPos[0] + 3, centerPos[1], centerPos[2] + 3],
+        near: 0.01,
+      }}
     >
       <ambientLight />
       <pointLight
