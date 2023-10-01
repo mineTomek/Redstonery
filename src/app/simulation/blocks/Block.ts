@@ -1,6 +1,6 @@
 import { Vector3 } from '@react-three/fiber'
 import SimulationBlock, { Facing } from '../SimulationBlock'
-import block from './../assets/block.png'
+import block from './../assets/textures/block.png'
 
 export default class Block implements SimulationBlock {
   position: Vector3 = [0, 0, 0]
