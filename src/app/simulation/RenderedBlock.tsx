@@ -24,7 +24,9 @@ export default function RenderedBlock(props: {
       scale={props.clicked ? 1 + (1 / 16) * 2 : 1}
       onClick={event => {
         event.stopPropagation()
-        props.setClicked(!props.clicked)
+        if (event.shiftKey) {
+          props.setClicked(!props.clicked)
+        }
       }}
       onPointerOver={event => {
         event.stopPropagation()
