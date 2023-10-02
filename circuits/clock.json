@@ -34,14 +34,13 @@
             }
         },
         {
-            "type": "block",
+            "type": "redstone_torch",
             "data": {
                 "position": [
                     0,
                     3,
                     0
-                ],
-                "colorGroup": "3"
+                ]
             }
         }
     ]
