@@ -3,11 +3,6 @@ import { Vector3 as Vector3Fiber } from '@react-three/fiber'
 export default interface SimulationBlock {
   use(): void
 
-
-  /**
-   * This value is used for the type that the block should be. This is specified in the README file
-   */
-  type: string
   position: Vector3Fiber
 
   /**

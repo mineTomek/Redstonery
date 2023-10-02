@@ -4,7 +4,7 @@ import BlockRenderer from './renderers/BlockRenderer'
 
 export default class RedstoneTorch implements SimulationBlock {
   position: Vector3 = [0, 0, 0]
-  type: string = 'block'
+
   colorGroup?: number = undefined
   texturePath: string = 'textures/redstone_torch.png'
   modelPath: string = 'models/redstone_torch.gltf'

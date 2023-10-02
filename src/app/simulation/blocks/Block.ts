@@ -4,7 +4,7 @@ import BlockRenderer from './renderers/BlockRenderer'
 
 export default class Block implements SimulationBlock {
   position: Vector3 = [0, 0, 0]
-  type: string = 'block'
+
   colorGroup?: number = 0
   texturePath: string = 'textures/block.png'
   modelPath: string = 'models/full_block.gltf'
