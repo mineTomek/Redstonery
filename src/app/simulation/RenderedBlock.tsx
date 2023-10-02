@@ -4,9 +4,7 @@ import { useRef, useState } from 'react'
 import { NearestFilter } from 'three'
 
 export default function RenderedBlock(props: {
-  position: Vector3 | [x: number, y: number, z: number]
-  color: number
-  texture: string
+  block: SimulationBlock
   setClicked: (clicked: boolean) => void
   clicked: boolean
 }) {
