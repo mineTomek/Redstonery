@@ -6,8 +6,9 @@ import { useState } from 'react'
 import useSWR from 'swr'
 import { Vector3 } from 'three'
 import RenderedBlock from './RenderedBlock'
-import SimulationBlock from './SimulationBlock'
+import SimulationBlock, { Facing } from './SimulationBlock'
 import Block from './blocks/Block'
+import RedstoneTorch from './blocks/RedstoneTorch'
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
@@ -35,6 +36,10 @@ export default function Simulator(props: { circuit: string }) {
 
   jsonObject.forEach(jsonBlock => {
     switch (jsonBlock.type) {
+      case 'redstone_torch':
+        blocks.push(
+          new RedstoneTorch(jsonBlock.data.position, Facing.Down)
+        )
       default:
         blocks.push(
           new Block(jsonBlock.data.position, jsonBlock.data.colorGroup)
