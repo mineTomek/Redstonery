@@ -40,6 +40,7 @@ export default function Simulator(props: { circuit: string }) {
         blocks.push(
           new RedstoneTorch(jsonBlock.data.position, Facing.Down)
         )
+        break;
       default:
         blocks.push(
           new Block(jsonBlock.data.position, jsonBlock.data.colorGroup)
