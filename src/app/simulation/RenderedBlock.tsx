@@ -2,6 +2,7 @@ import { useTexture } from '@react-three/drei'
 import { Vector3 } from '@react-three/fiber'
 import { useRef, useState } from 'react'
 import { NearestFilter } from 'three'
+import SimulationBlock from './SimulationBlock'
 
 export default function RenderedBlock(props: {
   block: SimulationBlock
