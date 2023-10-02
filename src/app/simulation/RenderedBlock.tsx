@@ -10,7 +10,7 @@ export default function RenderedBlock(props: {
   setClicked: (clicked: boolean) => void
   clicked: boolean
 }) {
-  const ref = useRef<THREE.Mesh>(null!)
+  // const ref = useRef<THREE.Mesh>(null!)
 
   const [hovered, setHovered] = useState(false)
 
@@ -20,7 +20,6 @@ export default function RenderedBlock(props: {
   return (
     <mesh
       position={props.position}
-      ref={ref}
       scale={props.clicked ? 1 + (1 / 16) * 2 : 1}
       onClick={event => {
         event.stopPropagation()
