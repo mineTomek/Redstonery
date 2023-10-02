@@ -1,8 +1,8 @@
 import { useTexture } from '@react-three/drei'
 import { useState } from 'react'
-import { NearestFilter } from 'three'
-import SimulationBlock from './SimulationBlock'
+import { NearestFilter, Vector3 } from 'three'
 import generateColors from './BlockColors'
+import SimulationBlock from './SimulationBlock'
 
 export default function RenderedBlock(props: {
   block: SimulationBlock
@@ -21,34 +21,12 @@ export default function RenderedBlock(props: {
     : 0xffffff
 
   return (
-    <mesh
-      position={props.block.position}
-      scale={props.clicked ? 1 + (1 / 16) * 2 : 1}
-      onClick={event => {
-        event.stopPropagation()
-        if (event.shiftKey) {
-          props.setClicked(!props.clicked)
-        }
-      }}
-      onPointerOver={event => {
-        event.stopPropagation()
-        setHovered(true)
-      }}
-      onPointerOut={_ => {
-        setHovered(false)
-      }}
-    >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial
-        map={texture}
-        color={
-          hovered || props.clicked
-            ? color < 0xdddddd
-              ? color + 0x222222
-              : 0xffffff
-            : color
-        }
-      />
-    </mesh>
+    <props.block.renderer
+      position={props.block.position as Vector3}
+      texture={texture}
+      color={color}
+      click={{ setClicked: props.setClicked, clicked: props.clicked }}
+      hover={{ setHovered, hovered }}
+    />
   )
 }
