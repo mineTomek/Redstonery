@@ -13,7 +13,7 @@ export default function RenderedBlock(props: {
 
   const [hovered, setHovered] = useState(false)
 
-  const texture = useTexture(props.block.texturePath)
+  const texture = useTexture('./assets/' + props.block.texturePath)
   texture.magFilter = NearestFilter
 
   const color = props.block.colorGroup
