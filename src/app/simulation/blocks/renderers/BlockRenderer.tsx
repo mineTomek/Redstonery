@@ -16,7 +16,6 @@ export default function BlockRenderer(props: {
       scale={props.click.clicked ? 1 + (1 / 16) * 2 : 1}
       onClick={event => {
         event.stopPropagation()
-        console.log(event.target)
         if (event.shiftKey) {
           props.click.setClicked(!props.click.clicked)
         }
