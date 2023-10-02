@@ -28,6 +28,11 @@ export default interface SimulationBlock {
    */
   modelPath: string
 
+  /**
+   * Block renderer function component that has to be the same as BlockRenderer
+   */
+  renderer: typeof BlockRenderer
+
   facing?: Facing
 
   state?: boolean

@@ -1,5 +1,6 @@
 import { MeshProps, Vector3 } from '@react-three/fiber'
 import SimulationBlock, { Facing } from '../SimulationBlock'
+import BlockRenderer from './renderers/BlockRenderer'
 
 export default class RedstoneTorch implements SimulationBlock {
   position: Vector3 = [0, 0, 0]
@@ -7,6 +8,8 @@ export default class RedstoneTorch implements SimulationBlock {
   colorGroup?: number = undefined
   texturePath: string = 'textures/redstone_torch.png'
   modelPath: string = 'models/redstone_torch.gltf'
+  renderer = BlockRenderer
+
   facing?: Facing = Facing.Down
   state?: boolean = undefined
   locked?: boolean = undefined

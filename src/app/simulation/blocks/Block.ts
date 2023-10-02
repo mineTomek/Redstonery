@@ -1,5 +1,6 @@
 import { Vector3 } from '@react-three/fiber'
 import SimulationBlock, { Facing } from '../SimulationBlock'
+import BlockRenderer from './renderers/BlockRenderer'
 
 export default class Block implements SimulationBlock {
   position: Vector3 = [0, 0, 0]
@@ -7,6 +8,8 @@ export default class Block implements SimulationBlock {
   colorGroup?: number = 0
   texturePath: string = 'textures/block.png'
   modelPath: string = 'models/full_block.gltf'
+  renderer = BlockRenderer
+
   facing?: Facing = undefined
   state?: boolean = undefined
   locked?: boolean = undefined
