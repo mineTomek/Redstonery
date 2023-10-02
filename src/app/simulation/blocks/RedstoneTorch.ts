@@ -1,4 +1,4 @@
-import { MeshProps, Vector3 } from '@react-three/fiber'
+import { Vector3 } from '@react-three/fiber'
 import SimulationBlock, { Facing } from '../SimulationBlock'
 import BlockRenderer from './renderers/BlockRenderer'
 
