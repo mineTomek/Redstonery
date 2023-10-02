@@ -1,24 +1,22 @@
-export default class BlockColors {
-  generateColors(colorGroup: number): string {
-    return [
-      MinecraftColors.White,
-      MinecraftColors.LightGray,
-      MinecraftColors.DarkGray,
-      MinecraftColors.Black,
-      MinecraftColors.Red,
-      MinecraftColors.Orange,
-      MinecraftColors.Yellow,
-      MinecraftColors.LimeGreen,
-      MinecraftColors.Green,
-      MinecraftColors.LightBlue,
-      MinecraftColors.Cyan,
-      MinecraftColors.Blue,
-      MinecraftColors.Purple,
-      MinecraftColors.Magenta,
-      MinecraftColors.Pink,
-      MinecraftColors.Brown
-    ][colorGroup]
-  }
+export default function generateColors(colorGroup: number): string {
+  return [
+    MinecraftColors.White,
+    MinecraftColors.LightGray,
+    MinecraftColors.DarkGray,
+    MinecraftColors.Black,
+    MinecraftColors.Red,
+    MinecraftColors.Orange,
+    MinecraftColors.Yellow,
+    MinecraftColors.LimeGreen,
+    MinecraftColors.Green,
+    MinecraftColors.LightBlue,
+    MinecraftColors.Cyan,
+    MinecraftColors.Blue,
+    MinecraftColors.Purple,
+    MinecraftColors.Magenta,
+    MinecraftColors.Pink,
+    MinecraftColors.Brown,
+  ][colorGroup]
 }
 
 export enum MinecraftColors {
