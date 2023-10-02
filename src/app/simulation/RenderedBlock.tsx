@@ -3,6 +3,7 @@ import { Vector3 } from '@react-three/fiber'
 import { useRef, useState } from 'react'
 import { NearestFilter } from 'three'
 import SimulationBlock from './SimulationBlock'
+import generateColors from './BlockColors'
 
 export default function RenderedBlock(props: {
   block: SimulationBlock
@@ -15,6 +16,10 @@ export default function RenderedBlock(props: {
 
   const texture = useTexture(props.texture)
   texture.magFilter = NearestFilter
+
+  const color = props.block.colorGroup
+    ? parseInt(generateColors(props.block.colorGroup))
+    : 0xffffff
 
   return (
     <mesh
@@ -39,10 +44,10 @@ export default function RenderedBlock(props: {
         map={texture}
         color={
           hovered || props.clicked
-            ? props.color < 0xdddddd
-              ? props.color + 0x222222
+            ? color < 0xdddddd
+              ? color + 0x222222
               : 0xffffff
-            : props.color
+            : color
         }
       />
     </mesh>
