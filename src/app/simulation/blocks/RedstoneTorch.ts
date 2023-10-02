@@ -7,7 +7,6 @@ export default class RedstoneTorch implements SimulationBlock {
 
   colorGroup?: number = undefined
   texturePath: string = 'textures/redstone_torch.png'
-  modelPath: string = 'models/redstone_torch.gltf'
   renderer = BlockRenderer
 
   facing?: Facing = Facing.Down

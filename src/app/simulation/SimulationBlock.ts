@@ -18,13 +18,6 @@ export default interface SimulationBlock {
   texturePath: string
 
   /**
-   * Full path to a `*.gltf` file containing the model from assets.
-   * For example `models/full_block.gltf`.
-   * Texture has to be a separate file in texturePath.
-   */
-  modelPath: string
-
-  /**
    * Block renderer function component that has to be the same as BlockRenderer
    */
   renderer: typeof BlockRenderer
