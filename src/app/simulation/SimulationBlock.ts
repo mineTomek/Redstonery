@@ -1,4 +1,5 @@
 import { Vector3 as Vector3Fiber } from '@react-three/fiber'
+import BlockRenderer from './blocks/renderers/BlockRenderer'
 
 export default interface SimulationBlock {
   use(): void
