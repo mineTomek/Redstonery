@@ -5,7 +5,6 @@ import { Canvas, Vector3 as Vector3Fiber } from '@react-three/fiber'
 import { useState } from 'react'
 import useSWR from 'swr'
 import { Vector3 } from 'three'
-import BlockColors from './BlockColors'
 import RenderedBlock from './RenderedBlock'
 import SimulationBlock from './SimulationBlock'
 import Block from './blocks/Block'
@@ -82,19 +81,10 @@ export default function Simulator(props: { circuit: string }) {
         minDistance={Math.max(maxPosArr[0], maxPosArr[1], maxPosArr[2]) + 2}
       />
       {blocks.map((block, i) => {
-        let blockPos = block.position
         return (
           <RenderedBlock
             key={`block_${i}`}
-            position={blockPos}
-            color={
-              block.colorGroup
-                ? parseInt(
-                    BlockColors.prototype.generateColors(block.colorGroup)
-                  )
-                : 0xffffff
-            }
-            texture={block.texturePath}
+            block={block}
             clicked={clickedBlock === i}
             setClicked={clicked =>
               clicked ? setClickedBlock(i) : setClickedBlock(-1)
