@@ -1,14 +1,14 @@
-import { Vector3 } from '@react-three/fiber'
+import { Vector3 as Vector3Fiber } from '@react-three/fiber'
 
 export default interface SimulationBlock {
   use(): void
 
-  position: Vector3
 
   /**
    * This value is used for the type that the block should be. This is specified in the README file
    */
   type: string
+  position: Vector3Fiber
 
   /**
    * This is a group of colors. Objects with the same color will be assigned the same color.
