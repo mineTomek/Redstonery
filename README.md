@@ -31,26 +31,18 @@ The API is available at /api/prompt. It takes a JSON object with the following f
 ```json
 {
   "prompt": "The natural language description of the contraption.",
-  "version": "6"
+  "version": "1.20"
 }
 ```
 
-Version is not e.g. 1.20, for grouping versions without change between them. More is available here:
-
-<details>
-
-<summary>Model versions</summary>
+See the table below for more info on versions
 
 > [!NOTE]
-> This is WIP
+> This version is WIP and might change
 
 | Model Version | Minecraft Version |
 | --- | --- |
-| x | 1.x |
-
-<!-- TODO -->
-
-</details>
+| 1.20 | 1.20+ |
 
 **Remember to use the `Authentication` header with your API key**
 
