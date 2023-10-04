@@ -84,7 +84,11 @@ export default function Simulator(props: { circuit: string }) {
         autoRotateSpeed={2}
         onStart={() => setAutoRotate(false)}
         target={centerPos}
-        minDistance={Math.max(maxPosArr[0], maxPosArr[1], maxPosArr[2]) + 2}
+        minDistance={
+          process.env.NODE_ENV == 'production'
+            ? Math.max(maxPosArr[0], maxPosArr[1], maxPosArr[2]) + 2
+            : 0.1
+        }
       />
       {blocks.map((block, i) => {
         return (
