@@ -41,8 +41,8 @@ See the table below for more info on versions
 > This version is WIP and might change
 
 | Model Version | Minecraft Version |
-| --- | --- |
-| 1.20 | 1.20+ |
+| ------------- | ----------------- |
+| 1.20          | 1.20+             |
 
 **Remember to use the `Authentication` header with your API key**
 
