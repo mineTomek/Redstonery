@@ -5,7 +5,6 @@ import { Canvas, Vector3 as Vector3Fiber } from '@react-three/fiber'
 import { useState } from 'react'
 import useSWR from 'swr'
 import { Vector3 } from 'three'
-import RenderedBlock from './RenderedBlock'
 import SimulationBlock, { Facing } from './SimulationBlock'
 import Block from './blocks/Block'
 import RedstoneTorch from './blocks/RedstoneTorch'
@@ -92,13 +91,14 @@ export default function Simulator(props: { circuit: string }) {
       />
       {blocks.map((block, i) => {
         return (
-          <RenderedBlock
+          <block.renderer
             key={`block_${i}`}
             block={block}
-            clicked={clickedBlock === i}
-            setClicked={clicked =>
-              clicked ? setClickedBlock(i) : setClickedBlock(-1)
-            }
+            click={{
+              setClicked: clicked =>
+                clicked ? setClickedBlock(i) : setClickedBlock(-1),
+              clicked: clickedBlock === i,
+            }}
           />
         )
       })}
