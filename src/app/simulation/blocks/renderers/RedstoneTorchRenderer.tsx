@@ -1,7 +1,22 @@
-import { useTexture } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 import { useState } from 'react'
-import { NearestFilter } from 'three'
+import * as THREE from 'three'
+import { GLTF } from 'three-stdlib'
 import SimulationBlock from '../../SimulationBlock'
+
+type GLTFResult = GLTF & {
+  nodes: {
+    body: THREE.Mesh
+    nxGlow: THREE.Mesh
+    mesh_2: THREE.Mesh
+    mesh_2_1: THREE.Mesh
+    mesh_2_2: THREE.Mesh
+    mesh_2_3: THREE.Mesh
+    mesh_2_4: THREE.Mesh
+    nzGlow: THREE.Mesh
+    pzGlow: THREE.Mesh
+  }
+}
 
 export default function RedstoneTorchRenderer(props: {
   block: SimulationBlock
@@ -13,20 +28,13 @@ export default function RedstoneTorchRenderer(props: {
 
   const color = hovered || props.click.clicked ? 0xffffff : 0xcccccc
 
-  const texture = useTexture(props.block.texturePaths[hovered ? 0 : 1])
-  texture.magFilter = NearestFilter
+  const { nodes } = useGLTF(
+    `assets/models/redstone_torch_${hovered ? 'on' : 'off'}.gltf`
+  ) as GLTFResult
 
-  const topTexture = texture.clone()
-
-  topTexture.repeat.set(2 * pixel, 2 * pixel)
-
-  topTexture.offset.set(7 * pixel, 8 * pixel)
-
-  const bottomTexture = texture.clone()
-
-  bottomTexture.repeat.set(2 * pixel, 2 * pixel)
-
-  bottomTexture.offset.set(7 * pixel, 12 * pixel)
+  (nodes.body.material as THREE.MeshStandardMaterial).color = new THREE.Color(
+    color
+  )
 
   return (
     <group
@@ -40,55 +48,65 @@ export default function RedstoneTorchRenderer(props: {
           props.click.setClicked(!props.click.clicked)
         }
       }}
+      onPointerDown={() => props.click.setClicked(!props.click.clicked)}
+      dispose={null}
     >
-      <mesh>
-        <boxGeometry args={[1, 1, 2 * pixel]} />
-        <meshStandardMaterial
-          map={texture}
-          color={color}
-          attach={'material-4'}
-          transparent
-          depthWrite={false}
+      <group position={[-0.5, -0.5 + (props.click.clicked ? pixel : 0), -0.5]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.body.geometry}
+          material={nodes.body.material}
         />
-        <meshStandardMaterial
-          map={texture}
-          color={color}
-          attach={'material-5'}
-          transparent
-          depthWrite={false}
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.nxGlow.geometry}
+          material={nodes.nxGlow.material}
         />
-      </mesh>
-      <mesh>
-        <boxGeometry args={[2 * pixel, 1, 1]} />
-        <meshStandardMaterial
-          map={texture}
-          color={color}
-          attach={'material-0'}
-          transparent
-          depthWrite={false}
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.nzGlow.geometry}
+          material={nodes.nzGlow.material}
         />
-        <meshStandardMaterial
-          map={texture}
-          color={color}
-          attach={'material-1'}
-          transparent
-          depthWrite={false}
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.pzGlow.geometry}
+          material={nodes.pzGlow.material}
         />
-      </mesh>
-
-      <mesh position={[0, -3 * pixel, 0]}>
-        <boxGeometry args={[2 * pixel, 10 * pixel, 2 * pixel]} />
-        <meshStandardMaterial
-          map={topTexture}
-          color={color}
-          attach={'material-2'}
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.mesh_2.geometry}
+          material={nodes.mesh_2.material}
         />
-        <meshStandardMaterial
-          map={bottomTexture}
-          color={color}
-          attach={'material-3'}
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.mesh_2_1.geometry}
+          material={nodes.mesh_2_1.material}
         />
-      </mesh>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.mesh_2_2.geometry}
+          material={nodes.mesh_2_2.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.mesh_2_3.geometry}
+          material={nodes.mesh_2_3.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.mesh_2_4.geometry}
+          material={nodes.mesh_2_4.material}
+        />
+      </group>
     </group>
   )
 }
