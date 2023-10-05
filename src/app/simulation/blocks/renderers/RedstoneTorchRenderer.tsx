@@ -1,25 +1,28 @@
-import { Texture, Vector3 } from 'three'
+import { useTexture } from '@react-three/drei'
+import { useState } from 'react'
+import { NearestFilter } from 'three'
+import SimulationBlock from '../../SimulationBlock'
 
 export default function RedstoneTorchRenderer(props: {
-  position: Vector3
-
-  texture: Texture
-
-  hover: { hovered: boolean; setHovered: (hovered: boolean) => void }
-
-  click: { clicked: boolean; setClicked: (clicked: boolean) => void }
+  block: SimulationBlock
+  click: { setClicked: (clicked: boolean) => void; clicked: boolean }
 }) {
+  const [hovered, setHovered] = useState(false)
+
   const pixel = 1 / 16
 
-  const color = props.hover.hovered || props.click.clicked ? 0xffffff : 0xcccccc
+  const color = hovered || props.click.clicked ? 0xffffff : 0xcccccc
 
-  const topTexture = props.texture.clone()
+  const texture = useTexture(props.block.texturePaths[hovered ? 0 : 1])
+  texture.magFilter = NearestFilter
+
+  const topTexture = texture.clone()
 
   topTexture.repeat.set(2 * pixel, 2 * pixel)
 
   topTexture.offset.set(7 * pixel, 8 * pixel)
 
-  const bottomTexture = props.texture.clone()
+  const bottomTexture = texture.clone()
 
   bottomTexture.repeat.set(2 * pixel, 2 * pixel)
 
@@ -28,9 +31,9 @@ export default function RedstoneTorchRenderer(props: {
   return (
     <group
       scale={props.click.clicked ? 1 + (1 / 16) * 2 : 1}
-      position={props.position}
-      onPointerEnter={() => props.hover.setHovered(true)}
-      onPointerOut={() => props.hover.setHovered(false)}
+      position={props.block.position}
+      onPointerEnter={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
       onClick={event => {
         event.stopPropagation()
         if (event.shiftKey) {
@@ -41,14 +44,14 @@ export default function RedstoneTorchRenderer(props: {
       <mesh>
         <boxGeometry args={[1, 1, 2 * pixel]} />
         <meshStandardMaterial
-          map={props.texture}
+          map={texture}
           color={color}
           attach={'material-4'}
           transparent
           depthWrite={false}
         />
         <meshStandardMaterial
-          map={props.texture}
+          map={texture}
           color={color}
           attach={'material-5'}
           transparent
@@ -58,14 +61,14 @@ export default function RedstoneTorchRenderer(props: {
       <mesh>
         <boxGeometry args={[2 * pixel, 1, 1]} />
         <meshStandardMaterial
-          map={props.texture}
+          map={texture}
           color={color}
           attach={'material-0'}
           transparent
           depthWrite={false}
         />
         <meshStandardMaterial
-          map={props.texture}
+          map={texture}
           color={color}
           attach={'material-1'}
           transparent
