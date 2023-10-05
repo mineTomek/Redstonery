@@ -32,7 +32,7 @@ export default function RedstoneTorchRenderer(props: {
     <group
       scale={props.click.clicked ? 1 + (1 / 16) * 2 : 1}
       position={props.block.position}
-      onPointerEnter={() => setHovered(true)}
+      onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
       onClick={event => {
         event.stopPropagation()
