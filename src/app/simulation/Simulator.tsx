@@ -36,10 +36,8 @@ export default function Simulator(props: { circuit: string }) {
   jsonObject.forEach(jsonBlock => {
     switch (jsonBlock.type) {
       case 'redstone_torch':
-        blocks.push(
-          new RedstoneTorch(jsonBlock.data.position, Facing.Down)
-        )
-        break;
+        blocks.push(new RedstoneTorch(jsonBlock.data.position, Facing.Down))
+        break
       default:
         blocks.push(
           new Block(jsonBlock.data.position, jsonBlock.data.colorGroup)
