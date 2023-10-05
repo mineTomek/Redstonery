@@ -12,8 +12,8 @@ export default interface SimulationBlock {
   colorGroup?: number
 
   /**
-   * Full paths to a texture files.
-   * For example `['textures/block.png']`.
+   * Full paths to a texture files from the `public` folder.
+   * For example `['/assets/textures/block.png']`.
    */
   texturePaths: string[]
 
