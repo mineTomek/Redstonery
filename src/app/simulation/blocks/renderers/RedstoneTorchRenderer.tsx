@@ -17,7 +17,7 @@ export default function RedstoneTorchRenderer(props: {
 
   topTexture.repeat.set(2 * pixel, 2 * pixel)
 
-  topTexture.offset.set(7 * pixel, 7 * pixel)
+  topTexture.offset.set(7 * pixel, 8 * pixel)
 
   const bottomTexture = props.texture.clone()
 
