@@ -4,7 +4,6 @@ import { OrbitControls } from '@react-three/drei'
 import { Canvas, Vector3 as Vector3Fiber } from '@react-three/fiber'
 import { useState } from 'react'
 import useSWR from 'swr'
-import { Vector3 } from 'three'
 import SimulationBlock, { Facing } from './SimulationBlock'
 import Block from './blocks/Block'
 import RedstoneTorch from './blocks/RedstoneTorch'
@@ -16,9 +15,9 @@ export default function Simulator(props: { circuit: string }) {
 
   const [clickedBlock, setClickedBlock] = useState(-1)
 
-  const [minPos, setMinPos] = useState<Vector3Fiber>([100, 100, 100])
+  let minPos: Vector3Fiber = [100, 100, 100]
 
-  const [maxPos, setMaxPos] = useState<Vector3Fiber>([-100, -100, -100])
+  let maxPos: Vector3Fiber = [-100, -100, -100]
 
   const { data, error } = useSWR(
     '/api/prebuilt?circuit=' + props.circuit,
@@ -47,10 +46,10 @@ export default function Simulator(props: { circuit: string }) {
 
   blocks.forEach(block => {
     if (block.position < minPos) {
-      setMinPos(block.position as Vector3)
+      minPos = block.position
     }
     if (block.position > maxPos) {
-      setMaxPos(block.position as Vector3)
+      maxPos = block.position
     }
   })
 
