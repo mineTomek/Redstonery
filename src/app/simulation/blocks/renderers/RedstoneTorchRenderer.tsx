@@ -48,7 +48,6 @@ export default function RedstoneTorchRenderer(props: {
           props.click.setClicked(!props.click.clicked)
         }
       }}
-      onPointerDown={() => props.click.setClicked(!props.click.clicked)}
       dispose={null}
     >
       <group position={[-0.5, -0.5 + (props.click.clicked ? pixel : 0), -0.5]}>
