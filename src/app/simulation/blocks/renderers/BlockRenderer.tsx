@@ -1,4 +1,4 @@
-import { useTexture } from '@react-three/drei'
+import { Edges,useTexture } from '@react-three/drei'
 import { useState } from 'react'
 import { NearestFilter } from 'three'
 import generateColors from '../../BlockColors'
@@ -27,7 +27,6 @@ export default function BlockRenderer(props: {
   return (
     <mesh
       position={props.block.position}
-      scale={props.click.clicked ? 1 + (1 / 16) * 2 : 1}
       onClick={event => {
         event.stopPropagation()
         if (event.shiftKey) {
@@ -41,14 +40,22 @@ export default function BlockRenderer(props: {
       <meshStandardMaterial
         map={texture}
         color={
-          hovered || props.click.clicked
-            ? color < 0xdddddd
-              ? color + 0x222222
-              : 0xffffff
-            : color
+          hovered ? (color < 0xdddddd ? color + 0x222222 : 0xffffff) : color
         }
         transparent
       />
+
+      <Edges
+        visible={props.click.clicked}
+        scale={1}
+        renderOrder={1000}
+      >
+        <meshBasicMaterial
+          transparent
+          color='#000'
+          depthTest={false}
+        />
+      </Edges>
     </mesh>
   )
 }

@@ -24,9 +24,7 @@ export default function RedstoneTorchRenderer(props: {
 }) {
   const [hovered, setHovered] = useState(false)
 
-  const pixel = 1 / 16
-
-  const color = hovered || props.click.clicked ? 0xffffff : 0xcccccc
+  const color = props.click.clicked ? 0xff88ff : hovered ? 0xffffff : 0x888888
 
   const { nodes } = useGLTF(
     `assets/models/redstone_torch_${hovered ? 'on' : 'off'}.gltf`
@@ -36,9 +34,10 @@ export default function RedstoneTorchRenderer(props: {
     color
   )
 
+  console.log(props.click.clicked)
+
   return (
     <group
-      scale={props.click.clicked ? 1 + (1 / 16) * 2 : 1}
       position={props.block.position}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
@@ -50,7 +49,7 @@ export default function RedstoneTorchRenderer(props: {
       }}
       dispose={null}
     >
-      <group position={[-0.5, -0.5 + (props.click.clicked ? pixel : 0), -0.5]}>
+      <group position={[-0.5, -0.5, -0.5]}>
         <mesh
           castShadow
           receiveShadow
