@@ -9,13 +9,18 @@ export default function Button(props: {
   href?: string
   //   onClick?: MouseEventHandler<HTMLButtonElement>
 }) {
+  const colors: { [key: string]: string } = {
+    primary: 'bg-primary-500',
+    warn: 'bg-yellow-500',
+    green: 'bg-green-500',
+    gray: 'bg-slate-500',
+  }
+
   return (
     <a
-      className={
-        'inline-flex h-[68px] items-center justify-start gap-4 rounded-2xl border-4 border-white/30 bg-' +
-        props.color +
-        '-500 px-4 py-2'
-      }
+      className={`inline-flex h-[68px] items-center justify-start gap-4 rounded-2xl border-4 border-white/30 ${
+        colors[props.color]
+      } px-4 py-2`}
       //   onClick={props.onClick}
       href={props.href}
     >
