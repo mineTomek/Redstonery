@@ -62,11 +62,22 @@ export default function Simulator(props: { circuit: string }) {
     (minPosArr[2] + maxPosArr[2]) / 2,
   ]
 
+  const cameraDistance =
+    Math.max(
+      maxPosArr[0] - minPosArr[0],
+      maxPosArr[1] - minPosArr[1],
+      maxPosArr[2] - minPosArr[2]
+    ) + 1
+
   return (
     <Canvas
       onPointerLeave={() => setAutoRotate(true)}
       camera={{
-        position: [centerPos[0] + 3, centerPos[1], centerPos[2] + 3],
+        position: [
+          centerPos[0] + cameraDistance,
+          centerPos[1],
+          centerPos[2] + cameraDistance,
+        ],
         near: 0.01,
       }}
     >
