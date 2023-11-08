@@ -1,20 +1,23 @@
 'use client'
 
 import Image from 'next/image'
+import { useState } from 'react'
 
 export default function Navbar() {
+  const [torchOn, setTorchOn] = useState(true)
   return (
-    <div className='inline-flex h-24 w-full items-center justify-center gap-4 border-b-2 border-black border-opacity-20 bg-slate-100 px-4 fixed'>
+    <div className='inline-flex h-24 w-full items-center justify-center gap-4 border-b-2 border-black border-opacity-20 bg-white/40 backdrop-blur-lg px-4 fixed z-10'>
       <div className='flex'>
-        <div className='text-[43.5px] font-black text-slate-900'>
+        <div className='text-[43.5px] font-black text-slate-950'>
           Redstone A
         </div>
         <Image
           alt=''
           className='h-12 w-12 [image-rendering:pixelated] -mx-5'
-          src='/redstone_torch.png'
           width={16}
           height={16}
+          src={`/assets/textures/redstone_torch_${torchOn ? 'on' : 'off'}.png`}
+          onClick={() => setTorchOn(!torchOn)}
         />
       </div>
     </div>

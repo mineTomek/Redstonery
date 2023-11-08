@@ -9,16 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@react-three/drei": "^9.86.0",
+    "@react-three/fiber": "^8.14.3",
+    "@types/three": "^0.156.0",
     "i": "^0.3.7",
     "next": "latest",
     "npm": "^10.1.0",
     "prettier-plugin-organize-imports": "^3.2.3",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "swr": "^2.2.4",
+    "three": "^0.156.1"
   },
   "devDependencies": {
     "@types/node": "latest",
