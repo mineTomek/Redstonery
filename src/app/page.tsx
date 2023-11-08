@@ -1,8 +1,6 @@
 import {
-  faAnglesDown,
   faRightToBracket as signUpIcon,
 } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from './components/Button'
 import Navbar from './components/Navbar'
 import Simulator from './simulation/Simulator'
@@ -32,14 +30,6 @@ export default function Home() {
           //   console.log(e)
           // }}
         />
-        <div>
-          <FontAwesomeIcon
-            icon={faAnglesDown}
-            className='text-slate-900'
-            width={32}
-            height={32}
-          />
-        </div>
       </div>
     </main>
   )
