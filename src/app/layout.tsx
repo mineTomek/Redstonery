@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Redstone AI',
-  description: 'An AI for redstone',
+  title: 'Redstonery',
+  description: 'Redstone simulator',
 }
 
 export default function RootLayout({
