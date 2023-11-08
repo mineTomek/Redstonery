@@ -1,5 +1,5 @@
 import {
-  faRightToBracket as signUpIcon,
+  faCubes as simulationIcon,
 } from '@fortawesome/free-solid-svg-icons'
 import Button from './components/Button'
 import Navbar from './components/Navbar'
@@ -20,7 +20,7 @@ export default function Home() {
         </div>
         <Button
           color='primary'
-          icon={signUpIcon}
+          icon={simulationIcon}
           iconSize={36}
           href='/'
           text='Start simulating'
