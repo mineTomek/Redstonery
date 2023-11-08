@@ -23,6 +23,7 @@ export default function Home() {
           icon={signUpIcon}
           iconSize={36}
           href='/'
+          text='Start simulating'
           // onClick={e => {
           //   console.log('Hi!')
           //   console.log(e)
