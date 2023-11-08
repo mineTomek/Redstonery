@@ -16,9 +16,7 @@ export default function Home() {
           Create Amazing Redstone Contraptions with Ease
         </div>
         <div className='w-[340px] text-center text-base font-black text-slate-700'>
-          Redstone AI is a powerful tool that can help you to create powerful
-          redstone contraptions. Simply describe your contraption, and our tool
-          will generate it for you.
+          A redstone simulator that helps you create better redstone contraptions
         </div>
         <Button
           color='primary'
