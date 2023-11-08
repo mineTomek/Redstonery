@@ -34,8 +34,6 @@ export default function RedstoneTorchRenderer(props: {
     color
   )
 
-  console.log(props.click.clicked)
-
   return (
     <group
       position={props.block.position}
