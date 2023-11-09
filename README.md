@@ -1,12 +1,12 @@
-# RedstoneAI
+# Redstonery
 
-### AI Redstone Contraption Creator
+### Redstone circuit simulator
 
-This is a web app that uses AI models to generate Redstone contraptions from natural language descriptions. It also has a 3D interactive display of the contraption, so the user can test if the thing works.
+This is a web app that has a 3D interactive display of the contraption, so the user can test if the thing works. In the future there will also be an AI feature for generating circuits.
 
 ## Usage
 
-It's not hosted right now. However, you can read the development section below, to see how to run it on your machine.
+The website is hosted on https://redstonery.vercel.app. However, you can read the development section below, to see how to run it on your machine.
 
 <!-- To use the web app, simply run `bun run dev` or `npm run dev` and visit `http://localhost:3000` in your web browser. You can then enter a natural language description of the contraption you want to create in the text box and click the "Generate" button. The app will then generate the contraption and display it in the 3D interactive display. You can then test if the contraption works by moving the blocks around and interacting with them. -->
 
