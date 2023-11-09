@@ -20,7 +20,6 @@ The development server will run on port 3000. You can then visit `http://localho
 
 The app's code is in the `/src/app` directory.
 
-
 ## API
 
 > [!IMPORTANT]
@@ -52,14 +51,14 @@ and returns a JSON object with the following fields:
 {
   "blocks": [
     {
-        "type": "minecraft:redstone_block",
-        "position": [0, 0, 0]
+      "type": "minecraft:redstone_block",
+      "position": [0, 0, 0]
     },
     {
-        "type": "minecraft:piston",
-        "position": [0, 1, 0],
-        "facing": "up"
-    },
+      "type": "minecraft:piston",
+      "position": [0, 1, 0],
+      "facing": "up"
+    }
     //...
   ]
 }
@@ -67,6 +66,7 @@ and returns a JSON object with the following fields:
 
 The `blocks` field is an array of objects, each of which represents a block in the contraption. The `type` field is the type of the block, and the `position` field is the position of the block in the world. The block can also contain these fields, however, they may be undefined if that block doesn't support it[^1]:
 [^1]: Bolded states are implemented to the simulator
+
 - "facing": The rotation of the block, either `up`, `down`, `north`, `south`, `east`, or `west`.
 - "state": Either `on` or `off`. Used for levers or redstone repeaters.
 - "locked": A boolean value (`true` or `false`) representing the [lock state of a repeater](https://minecraft.wiki/w/Redstone_Repeater#Signal_locking).
@@ -75,7 +75,6 @@ The `blocks` field is an array of objects, each of which represents a block in t
 - "open": Boolean value applicable to doors and fence gates.
 - "page": number from 1 to 15 used for the page selected on a lectern. It's limited because this is mainly used for the redstone signal, so no more is necessary.
 - "inverted": Boolean value applicable to daylight detectors. Read more [here](https://minecraft.wiki/w/Daylight_Detector#Inverted_Daylight_Detector).
-
 
 ## License
 

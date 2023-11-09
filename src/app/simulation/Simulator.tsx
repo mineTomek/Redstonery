@@ -10,7 +10,10 @@ import RedstoneTorch from './blocks/RedstoneTorch'
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
-export default function Simulator(props: { circuit: string, className: string }) {
+export default function Simulator(props: {
+  circuit: string
+  className: string
+}) {
   const [autoRotate, setAutoRotate] = useState(true)
 
   const [clickedBlock, setClickedBlock] = useState(-1)

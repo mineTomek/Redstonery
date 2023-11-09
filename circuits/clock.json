@@ -1,47 +1,31 @@
 {
-    "blocks": [
-        {
-            "type": "block",
-            "data": {
-                "position": [
-                    0,
-                    0,
-                    0
-                ],
-                "colorGroup": "0"
-            }
-        },
-        {
-            "type": "block",
-            "data": {
-                "position": [
-                    0,
-                    1,
-                    0
-                ],
-                "colorGroup": "1"
-            }
-        },
-        {
-            "type": "block",
-            "data": {
-                "position": [
-                    0,
-                    2,
-                    0
-                ],
-                "colorGroup": "2"
-            }
-        },
-        {
-            "type": "redstone_torch",
-            "data": {
-                "position": [
-                    0,
-                    3,
-                    0
-                ]
-            }
-        }
-    ]
+  "blocks": [
+    {
+      "type": "block",
+      "data": {
+        "position": [0, 0, 0],
+        "colorGroup": "0"
+      }
+    },
+    {
+      "type": "block",
+      "data": {
+        "position": [0, 1, 0],
+        "colorGroup": "1"
+      }
+    },
+    {
+      "type": "block",
+      "data": {
+        "position": [0, 2, 0],
+        "colorGroup": "2"
+      }
+    },
+    {
+      "type": "redstone_torch",
+      "data": {
+        "position": [0, 3, 0]
+      }
+    }
+  ]
 }

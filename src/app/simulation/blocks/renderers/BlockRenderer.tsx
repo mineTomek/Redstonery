@@ -1,4 +1,4 @@
-import { Edges,useTexture } from '@react-three/drei'
+import { Edges, useTexture } from '@react-three/drei'
 import { useState } from 'react'
 import { NearestFilter } from 'three'
 import generateColors from '../../BlockColors'
