@@ -10,9 +10,9 @@ export default function Home() {
     <main className=''>
       <Navbar />
 
-      <div className='px-6 grid h-[100dvh]'>
+      <div className='px-6 grid md:grid-cols-2 h-[100dvh]'>
         <Simulator circuit='clock' className='relative after:absolute after:bg-gradient-to-t after:from-gray-950 after:to-transparent after:bottom-0 after:w-full after:h-16' />
-        <div className='h-[50dvh] text-center flex flex-col gap-12'>
+        <div className='h-[50dvh] text-center flex flex-col gap-12 md:justify-center'>
           <div className='tracking-wider text-lg font-bold'>
             Simulating redstone since... not yet.
           </div>
