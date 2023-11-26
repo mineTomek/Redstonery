@@ -1,3 +1,5 @@
+'use client'
+
 import { faCubes as simulationIcon } from '@fortawesome/free-solid-svg-icons'
 import Button from './components/Button'
 import Navbar from './components/Navbar'
@@ -5,32 +7,28 @@ import Simulator from './simulation/Simulator'
 
 export default function Home() {
   return (
-    <main className='bg-white min-h-screen'>
+    <main className=''>
       <Navbar />
 
-      <div className='inline-flex flex-col items-center pb-6 gap-3 w-full h-screen justify-between'>
-        <Simulator
-          circuit='clock'
-          className='[height:40rem!important;]'
-        />
-        <div className='self-stretch text-center text-[28px] font-black text-slate-800 px-4'>
-          Simulating redstone since... not yet.
+      <div className='px-6 grid h-[100dvh]'>
+        <Simulator circuit='clock' className='relative after:absolute after:bg-gradient-to-t after:from-gray-950 after:to-transparent after:bottom-0 after:w-full after:h-16' />
+        <div className='h-[50dvh] text-center flex flex-col gap-12'>
+          <div className='tracking-wider text-lg font-bold'>
+            Simulating redstone since... not yet.
+          </div>
+          <div className='tracking-wider text-lg'>
+            A redstone simulator that helps you create better redstone
+            contraptions
+          </div>
+          <Button
+            color='primary'
+            icon={simulationIcon}
+            text='Start simulating'
+            onClick={router => {
+              router.push('/simulator')
+            }}
+          />
         </div>
-        <div className='w-[340px] text-center text-lg font-black text-slate-700'>
-          A redstone simulator that helps you create better redstone
-          contraptions
-        </div>
-        <Button
-          color='primary'
-          icon={simulationIcon}
-          iconSize={36}
-          href='/'
-          text='Start simulating'
-          // onClick={e => {
-          //   console.log('Hi!')
-          //   console.log(e)
-          // }}
-        />
       </div>
     </main>
   )

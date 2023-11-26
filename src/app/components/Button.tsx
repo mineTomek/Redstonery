@@ -1,14 +1,16 @@
+'use client'
+
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime'
+import { useRouter } from 'next/navigation'
 
 export default function Button(props: {
   color: string
   disabled?: boolean
   icon?: IconProp
-  iconSize?: number
-  href?: string
   text: string
-  //   onClick?: MouseEventHandler<HTMLButtonElement>
+  onClick?: (router: AppRouterInstance) => void
 }) {
   const colors: { [key: string]: string } = {
     primary: 'bg-primary-500',
@@ -17,24 +19,21 @@ export default function Button(props: {
     gray: 'bg-slate-500',
   }
 
+  const router = useRouter()
+
   return (
-    <a
-      className={`inline-flex h-[68px] items-center justify-start gap-4 rounded-2xl border-4 border-white/30 ${
-        colors[props.color]
-      } px-4 py-2`}
-      //   onClick={props.onClick}
-      href={props.href}
+    <button
+      className={`${colors[props.color]} flex justify-evenly w-3/4 mx-auto p-6 rounded-full items-center`}
+      onClick={() => props.onClick != undefined && props.onClick(router)}
     >
-      <div className='text-[26px] font-black text-white'>{props.text}</div>
+      <div className='text-xl font-bold tracking-wide'>{props.text}</div>
       {props.icon && (
-        <div className='flex h-12 w-12 justify-center'>
-          <FontAwesomeIcon
-            icon={props.icon}
-            color='white'
-            width={props.iconSize}
-          />
-        </div>
+        <FontAwesomeIcon
+          icon={props.icon}
+          color='white'
+          className='w-8 h-8'
+        />
       )}
-    </a>
+    </button>
   )
 }
