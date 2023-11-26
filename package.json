@@ -1,12 +1,15 @@
 {
-  "name": "redstoneai",
+  "name": "redstonery",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier-check": "prettier -c .",
+    "prettier-list": "prettier -l .",
+    "prettier-write": "prettier -w ."
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",

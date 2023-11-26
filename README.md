@@ -1,12 +1,12 @@
-# RedstoneAI
+# Redstonery
 
-### AI Redstone Contraption Creator
+### Redstone circuit simulator
 
-This is a web app that uses AI models to generate Redstone contraptions from natural language descriptions. It also has a 3D interactive display of the contraption, so the user can test if the thing works.
+This is a web app that has a 3D interactive display of the contraption, so the user can test if the thing works. In the future there will also be an AI feature for generating circuits.
 
 ## Usage
 
-It's not hosted right now. However, you can read the development section below, to see how to run it on your machine.
+The website is hosted on https://redstonery.vercel.app. However, you can read the development section below, to see how to run it on your machine.
 
 <!-- To use the web app, simply run `bun run dev` or `npm run dev` and visit `http://localhost:3000` in your web browser. You can then enter a natural language description of the contraption you want to create in the text box and click the "Generate" button. The app will then generate the contraption and display it in the 3D interactive display. You can then test if the contraption works by moving the blocks around and interacting with them. -->
 
@@ -19,7 +19,6 @@ To start the development server, run `npm run dev` or `bun run dev`.
 The development server will run on port 3000. You can then visit `http://localhost:3000` in your web browser to view the web app.
 
 The app's code is in the `/src/app` directory.
-
 
 ## API
 
@@ -52,14 +51,14 @@ and returns a JSON object with the following fields:
 {
   "blocks": [
     {
-        "type": "minecraft:redstone_block",
-        "position": [0, 0, 0]
+      "type": "minecraft:redstone_block",
+      "position": [0, 0, 0]
     },
     {
-        "type": "minecraft:piston",
-        "position": [0, 1, 0],
-        "facing": "up"
-    },
+      "type": "minecraft:piston",
+      "position": [0, 1, 0],
+      "facing": "up"
+    }
     //...
   ]
 }
@@ -67,6 +66,7 @@ and returns a JSON object with the following fields:
 
 The `blocks` field is an array of objects, each of which represents a block in the contraption. The `type` field is the type of the block, and the `position` field is the position of the block in the world. The block can also contain these fields, however, they may be undefined if that block doesn't support it[^1]:
 [^1]: Bolded states are implemented to the simulator
+
 - "facing": The rotation of the block, either `up`, `down`, `north`, `south`, `east`, or `west`.
 - "state": Either `on` or `off`. Used for levers or redstone repeaters.
 - "locked": A boolean value (`true` or `false`) representing the [lock state of a repeater](https://minecraft.wiki/w/Redstone_Repeater#Signal_locking).
@@ -75,7 +75,6 @@ The `blocks` field is an array of objects, each of which represents a block in t
 - "open": Boolean value applicable to doors and fence gates.
 - "page": number from 1 to 15 used for the page selected on a lectern. It's limited because this is mainly used for the redstone signal, so no more is necessary.
 - "inverted": Boolean value applicable to daylight detectors. Read more [here](https://minecraft.wiki/w/Daylight_Detector#Inverted_Daylight_Detector).
-
 
 ## License
 

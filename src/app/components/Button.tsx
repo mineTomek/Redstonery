@@ -7,6 +7,7 @@ export default function Button(props: {
   icon?: IconProp
   iconSize?: number
   href?: string
+  text: string
   //   onClick?: MouseEventHandler<HTMLButtonElement>
 }) {
   const colors: { [key: string]: string } = {
@@ -24,7 +25,7 @@ export default function Button(props: {
       //   onClick={props.onClick}
       href={props.href}
     >
-      <div className='text-[26px] font-black text-white'>Sign Up Today</div>
+      <div className='text-[26px] font-black text-white'>{props.text}</div>
       {props.icon && (
         <div className='flex h-12 w-12 justify-center'>
           <FontAwesomeIcon

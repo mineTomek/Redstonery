@@ -30,7 +30,7 @@ export default function RedstoneTorchRenderer(props: {
     `assets/models/redstone_torch_${hovered ? 'on' : 'off'}.gltf`
   ) as GLTFResult
 
-  (nodes.body.material as THREE.MeshStandardMaterial).color = new THREE.Color(
+  ;(nodes.body.material as THREE.MeshStandardMaterial).color = new THREE.Color(
     color
   )
 
