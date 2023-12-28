@@ -4,7 +4,10 @@ import Block from '../blocks/Block'
 import RedstoneTorch from '../blocks/RedstoneTorch'
 
 export class SimulatorUtils {
-  static calculateCenterPosition(minPosArr: number[], maxPosArr: number[]): Vector3 {
+  static calculateCenterPosition(
+    minPosArr: number[],
+    maxPosArr: number[]
+  ): Vector3 {
     return [
       (minPosArr[0] + maxPosArr[0]) / 2,
       (minPosArr[1] + maxPosArr[1]) / 2,

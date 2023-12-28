@@ -1,7 +1,7 @@
 'use client'
 
 import { OrbitControls } from '@react-three/drei'
-import { Canvas,Vector3 as Vector3Fiber } from '@react-three/fiber'
+import { Canvas, Vector3 as Vector3Fiber } from '@react-three/fiber'
 import { useState } from 'react'
 import useSWR from 'swr'
 import { SimulatorUtils } from './utils/SimulatorUtils'
@@ -43,11 +43,17 @@ export default function Simulator(props: {
   const minPosArray = minPos as number[]
   const maxPosArray = maxPos as number[]
 
-  let centerPos = SimulatorUtils.calculateCenterPosition(maxPosArray, maxPosArray)
+  let centerPos = SimulatorUtils.calculateCenterPosition(
+    maxPosArray,
+    maxPosArray
+  )
 
   let centerPosArray = centerPos as number[]
 
-  const cameraDistance = SimulatorUtils.calculateCameraDistance(minPosArray, maxPosArray)
+  const cameraDistance = SimulatorUtils.calculateCameraDistance(
+    minPosArray,
+    maxPosArray
+  )
 
   return (
     <Canvas

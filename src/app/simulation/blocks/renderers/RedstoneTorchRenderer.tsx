@@ -1,9 +1,9 @@
 import { useGLTF } from '@react-three/drei'
+import { ObjectMap, Vector3 } from '@react-three/fiber'
 import { useState } from 'react'
 import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
 import SimulationBlock from '../../SimulationBlock'
-import { ObjectMap } from '@react-three/fiber'
 
 type GLTFResult = GLTF & {
   nodes: {
