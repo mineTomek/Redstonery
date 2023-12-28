@@ -3,6 +3,7 @@ import { useState } from 'react'
 import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
 import SimulationBlock from '../../SimulationBlock'
+import { ObjectMap } from '@react-three/fiber'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -28,7 +29,7 @@ export default function RedstoneTorchRenderer(props: {
 
   const { nodes } = useGLTF(
     `assets/models/redstone_torch_${hovered ? 'on' : 'off'}.gltf`
-  ) as GLTFResult
+  ) as GLTFResult & ObjectMap
 
   ;(nodes.body.material as THREE.MeshStandardMaterial).color = new THREE.Color(
     color

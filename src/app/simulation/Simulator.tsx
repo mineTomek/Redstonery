@@ -12,7 +12,7 @@ const fetcher = (url: string) => fetch(url).then(res => res.json())
 
 export default function Simulator(props: {
   circuit: string
-  className: string
+  className?: string
 }) {
   const [autoRotate, setAutoRotate] = useState(true)
 
