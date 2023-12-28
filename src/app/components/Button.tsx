@@ -12,18 +12,29 @@ export default function Button(props: {
   text: string
   onClick?: (router: AppRouterInstance) => void
 }) {
-  const colors: { [key: string]: string } = {
+  const backgrounds: { [key: string]: string } = {
     primary: 'bg-primary-500',
     warn: 'bg-yellow-500',
     green: 'bg-green-500',
-    gray: 'bg-slate-500',
+    gray: 'bg-gray-500',
+  }
+
+  const outlines: { [key: string]: string } = {
+    primary: 'outline-primary-500',
+    warn: 'outline-yellow-500',
+    green: 'outline-green-500',
+    gray: 'outline-gray-500',
   }
 
   const router = useRouter()
 
   return (
     <button
-      className={`${colors[props.color]} flex justify-evenly w-3/4 mx-auto p-6 rounded-full items-center`}
+      className={`${
+        backgrounds[props.color]
+      } flex justify-evenly gap-6 mx-auto p-6 rounded-full items-center transition-[outline-offset,outline-width] ${
+        outlines[props.color]
+      } outline outline-offset-[-1px] outline-4 hover:outline-offset-4 active:outline-offset-[6px] active:outline-2`}
       onClick={() => props.onClick != undefined && props.onClick(router)}
     >
       <div className='text-xl font-bold tracking-wide'>{props.text}</div>
