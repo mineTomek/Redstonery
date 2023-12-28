@@ -37,7 +37,7 @@ export default function RedstoneTorchRenderer(props: {
 
   return (
     <group
-      position={props.block.position}
+      position={props.block.position as Vector3}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
       onClick={event => {

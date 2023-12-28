@@ -33,10 +33,10 @@ export default function Simulator(props: {
 
   blocks.forEach(block => {
     if (block.position < minPos) {
-      minPos = block.position
+      minPos = block.position as Vector3Fiber
     }
     if (block.position > maxPos) {
-      maxPos = block.position
+      maxPos = block.position as Vector3Fiber
     }
   })
 

@@ -1,10 +1,9 @@
-import { Vector3 as Vector3Fiber } from '@react-three/fiber'
 import BlockRenderer from './blocks/renderers/BlockRenderer'
 
 export default interface SimulationBlock {
   use(): void
 
-  position: Vector3Fiber
+  position: number[]
 
   /**
    * This is a group of colors. Objects with the same color will be assigned the same color.
