@@ -16,7 +16,7 @@ export default function Simulator(props: {
 }) {
   const [autoRotate, setAutoRotate] = useState(true)
 
-  const [clickedBlock, setClickedBlock] = useState(-1)
+  const [selectedBlock, setSelectedBlock] = useState(-1)
 
   let minPos: Vector3Fiber = [100, 100, 100]
 
@@ -108,8 +108,8 @@ export default function Simulator(props: {
             block={block}
             click={{
               setClicked: clicked =>
-                clicked ? setClickedBlock(i) : setClickedBlock(-1),
-              clicked: clickedBlock === i,
+                clicked ? setSelectedBlock(i) : setSelectedBlock(-1),
+              clicked: selectedBlock === i,
             }}
           />
         )
