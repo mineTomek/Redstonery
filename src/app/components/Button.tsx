@@ -6,7 +6,7 @@ import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.share
 import { useRouter } from 'next/navigation'
 
 export default function Button(props: {
-  color: string
+  color: ButtonColor
   disabled?: boolean
   icon?: IconProp
   text: string
@@ -36,4 +36,11 @@ export default function Button(props: {
       )}
     </button>
   )
+}
+
+export enum ButtonColor {
+  Primary = 'primary',
+  Warn = 'warn',
+  Green = 'green',
+  Gray = 'gray',
 }
