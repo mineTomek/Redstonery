@@ -1,4 +1,4 @@
-import { Edges, useTexture } from '@react-three/drei'
+import { Edges,useTexture } from '@react-three/drei'
 import { useState } from 'react'
 import { NearestFilter } from 'three'
 import generateColors from '../../BlockColors'
@@ -21,7 +21,7 @@ export default function BlockRenderer(props: {
         : 0xffffff
       : baseColor
 
-  const texture = useTexture(props.block.texturePaths[0])
+  const texture = useTexture('/assets/textures/block.png')
   texture.magFilter = NearestFilter
 
   return (

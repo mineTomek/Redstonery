@@ -11,12 +11,6 @@ export default interface SimulationBlock {
   colorGroup?: number
 
   /**
-   * Full paths to a texture files from the `public` folder.
-   * For example `['/assets/textures/block.png']`.
-   */
-  texturePaths: string[]
-
-  /**
    * Block renderer function component that has to be the same as BlockRenderer
    */
   renderer: typeof BlockRenderer

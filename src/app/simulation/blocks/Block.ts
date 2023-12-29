@@ -5,7 +5,6 @@ export default class Block implements SimulationBlock {
   position = [0, 0, 0]
 
   colorGroup?: number = 0
-  texturePaths: string[] = ['/assets/textures/block.png']
   renderer = BlockRenderer
 
   facing?: Facing = undefined
