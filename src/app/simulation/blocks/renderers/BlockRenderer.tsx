@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { NearestFilter } from 'three'
 import generateColors from '../../BlockColors'
 import SimulationBlock from '../../SimulationBlock'
+import { Vector3 } from '@react-three/fiber'
 
 export default function BlockRenderer(props: {
   block: SimulationBlock
@@ -26,7 +27,7 @@ export default function BlockRenderer(props: {
 
   return (
     <mesh
-      position={props.block.position}
+      position={props.block.position as Vector3}
       onClick={event => {
         event.stopPropagation()
         if (event.shiftKey) {
